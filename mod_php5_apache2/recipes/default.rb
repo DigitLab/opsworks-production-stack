@@ -15,10 +15,10 @@ execute "apt-get update" do
   ignore_failure true
 end
  
-# update PHP to version 5.6 and add necessary packages
-%w{php5-common php5-intl php-apc php5-mysqlnd php5-curl}.each do |pkg|
+node[:mod_php5_apache2][:packages].each do |pkg|
   package pkg do
-    action :upgrade
+    action :install
+    ignore_failure(pkg.to_s.match(/^php-pear-/) ? true : false) # some pear packages come from EPEL which is not always available
   end
 end
 
