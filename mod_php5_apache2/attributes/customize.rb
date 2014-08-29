@@ -8,11 +8,11 @@
 
 # The following shows how to override the mod_php5_apache2 packages:
 #
-normal[:mod_php5_apache2][:packages] = [ 'php-common',
-                                         'php-cli',
-                                         'php-curl',
-                                         'php-gd',
-                                         'php-intl',
-                                         'php-mcrypt',
-                                         'php-imap',
-                                         'php-mysql' ]
+normal[:mod_php5_apache2][:packages] = [ 'php5-common',
+                                         'php5-cli',
+                                         'php5-curl',
+                                         'php5-gd',
+                                         'php5-intl',
+                                         'php5-mcrypt',
+                                         'php5-imap',
+                                         'php5-mysql' ]
