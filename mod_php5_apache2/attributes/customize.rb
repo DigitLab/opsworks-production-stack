@@ -6,8 +6,6 @@
 # put the overrides in YOUR customize.rb file.
 ###
 
-# The following shows how to override the mod_php5_apache2 packages:
-#
 normal[:mod_php5_apache2][:packages] = [ 'php5-common',
                                          'php5-cli',
                                          'php5-curl',

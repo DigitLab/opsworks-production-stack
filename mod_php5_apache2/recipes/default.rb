@@ -1,6 +1,6 @@
 include_recipe 'apache2'
 
-# add repository for PHP 5.4
+# add repository for PHP 5.6
 apt_repository "php56" do
   uri "http://ppa.launchpad.net/ondrej/php5-5.6/ubuntu"
   distribution node['lsb']['codename']
