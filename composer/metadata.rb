@@ -10,6 +10,4 @@ version          "0.0.4"
 supports os
 end
 
-depends "php"
-
 recipe "composer", "Installs composer."
