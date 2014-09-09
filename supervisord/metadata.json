@@ -1,0 +1,31 @@
+{
+  "name": "supervisord",
+  "description": "Installs/Configures supervisord",
+  "long_description": "Supervisord cookbook\n====================\n\nThis cookbook installs\n[Supervisord](http://supervisord.org/configuration.html) and provides\na resource to supervise programs.\n\nUsage\n-----\n\nInclude `recipe[supervisord]` in your run list, and\n`supervisord_program` resource to configure individual programs. See\n`See recipes/example.rb` for sample usage\n\nResources\n---------\n\n## `supervisord_program` \n\n### Actions\n\n- `:supervise` (default):  add program to supervisord config\n- `:start`, `:stop`, `:restart`: manage service\n\n### Attribute parameters\n\n- `:name` (name attribute)\n- `:command` (required)\n- all settings of a `[program:X]` section of supervisord config\n\nAuthors\n-------\n\n* Maciej Pasternacki\n* Dan Crosta\n",
+  "maintainer": "Maciej Pasternacki",
+  "maintainer_email": "maciej@pasternacki.net",
+  "license": "WTFPL",
+  "platforms": {
+    "ubuntu": ">= 0.0.0",
+    "debian": ">= 6.0"
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "1.0.1"
+}

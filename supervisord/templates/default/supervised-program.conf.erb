@@ -1,0 +1,5 @@
+[program:<%= @program.name %>]
+command = <%= @program.command %>
+<% @program.each_setting do |name, setting| -%>
+<%= name %> = <%= setting %>
+<% end -%>
