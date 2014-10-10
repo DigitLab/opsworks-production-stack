@@ -124,5 +124,8 @@ buckets.each do |bucket|
     end
   end
 
-  execute "s3fs #{bucket[:name]} #{bucket[:path]} -o #{node['s3fs']['options']}"
+  execute "mount S3 bucket #{bucket[:name]}" do
+    command "s3fs #{bucket[:name]} #{bucket[:path]} -o #{node['s3fs']['options']}"
+    not_if "grep -qs '#{bucket[:path]} ' /proc/mounts"
+  end
 end
