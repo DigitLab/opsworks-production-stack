@@ -106,6 +106,12 @@ template "/etc/passwd-s3fs" do
   variables(:buckets => buckets)
 end
 
+# Create the cache directory
+directory node["s3fs"]["cache_dir"] do
+    action :create
+    recursive true
+end
+
 buckets.each do |bucket|
   directory bucket[:path] do
     owner     "root"
