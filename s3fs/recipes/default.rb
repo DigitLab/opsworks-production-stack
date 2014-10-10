@@ -98,6 +98,7 @@ end
 
 buckets = retrieve_s3_buckets()
 
+# Create the s3fs password file
 template "/etc/passwd-s3fs" do
   source "passwd-s3fs.erb"
   owner "root"
@@ -123,13 +124,5 @@ buckets.each do |bucket|
     end
   end
 
-  mount bucket[:path] do
-    device "s3fs##{bucket[:name]}"
-    fstype "fuse"
-    options node['s3fs']['options']
-    dump 0
-    pass 0
-    action [:enable, :mount]
-    not_if "grep -qs '#{bucket[:path]} ' /proc/mounts"
-  end
+  execute "s3fs #{bucket[:name]} #{bucket[:path]} -o #{node['s3fs']['options']}"
 end
