@@ -109,8 +109,11 @@ end
 
 # Create the cache directory
 directory node["s3fs"]["cache_dir"] do
-    action :create
-    recursive true
+  action :create
+  recursive true
+  not_if do
+    File.exists?(node["s3fs"]["cache_dir"])
+  end
 end
 
 buckets.each do |bucket|
