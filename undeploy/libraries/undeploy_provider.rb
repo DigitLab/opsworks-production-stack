@@ -18,7 +18,7 @@ class Chef
       end
 
       def action_undeploy
-        run_callback_from_file("#{current_path}/deploy/undeploy2.rb")
+        run_callback_from_file("#{current_path}/deploy/undeploy.rb")
       end
 
       protected
