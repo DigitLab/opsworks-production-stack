@@ -22,6 +22,12 @@ template "#{node['apache']['dir']}/mods-available/cloudflare.conf" do
   })
 end
 
+link "#{node['apache']['dir']}/mods-available/cloudflare.conf" do
+  to "#{node['apache']['dir']}/mods-enabled/cloudflare.conf"
+  owner 'root'
+  group node['apache']['root_group']
+end
+
 bash 'install-mod_cloudflare' do
   cwd "#{Chef::Config['file_cache_path']}"
   code "apxs -a -i -c mod_cloudflare.c"
