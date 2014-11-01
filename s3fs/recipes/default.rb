@@ -112,7 +112,7 @@ directory node["s3fs"]["cache_dir"] do
   action :create
   recursive true
   not_if do
-    File.exists?(node["s3fs"]["cache_dir"])
+    Dir.exists?(node["s3fs"]["cache_dir"])
   end
 end
 
@@ -123,7 +123,7 @@ buckets.each do |bucket|
     mode      0777
     recursive true
     not_if do
-      File.exists?(bucket[:path])
+      Dir.exists?(bucket[:path])
     end
   end
 
