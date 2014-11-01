@@ -1,0 +1,5 @@
+<IfModule mod_cloudflare.c>
+    CloudFlareRemoteIPHeader <%= @header  %>
+    CloudFlareRemoteIPTrustedProxy <%= @trusted_proxy %>
+    #DenyAllButCloudFlare
+</IfModule>
