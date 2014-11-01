@@ -16,10 +16,10 @@ template "#{node['apache']['dir']}/mods-available/cloudflare.conf" do
   owner 'root'
   group node['apache']['root_group']
   mode '0644'
-  variables (
+  variables({
     :header => node[:cloudflare][:header],
     :trusted_proxy => node[:cloudflare][:trusted_proxy]
-  )
+  })
 end
 
 bash 'install-mod_cloudflare' do
