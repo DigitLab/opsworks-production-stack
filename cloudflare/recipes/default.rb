@@ -22,8 +22,8 @@ template "#{node['apache']['dir']}/mods-available/cloudflare.conf" do
   })
 end
 
-link "#{node['apache']['dir']}/mods-available/cloudflare.conf" do
-  to "#{node['apache']['dir']}/mods-enabled/cloudflare.conf"
+link "#{node['apache']['dir']}/mods-enabled/cloudflare.conf" do
+  to "#{node['apache']['dir']}/mods-available/cloudflare.conf"
   owner 'root'
   group node['apache']['root_group']
 end
