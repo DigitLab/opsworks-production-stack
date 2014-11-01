@@ -118,8 +118,6 @@ end
 
 buckets.each do |bucket|
   directory bucket[:path] do
-    owner     "root"
-    group     "root"
     mode      0777
     recursive true
     not_if do
