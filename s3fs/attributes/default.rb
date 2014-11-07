@@ -18,5 +18,5 @@ end
 default["s3fs"]["mount_root"] = '/mnt'
 default["s3fs"]["cache_dir"] = "#{node[:opsworks_initial_setup][:ephemeral_mount_point]}/s3fs"
 default["s3fs"]["multi_user"] = false
-default["s3fs"]["version"] = "1.78"
+default["s3fs"]["version"] = "1.74"
 default["s3fs"]["options"] = "allow_other,use_cache=#{node["s3fs"]["cache_dir"]}"
