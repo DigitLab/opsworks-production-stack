@@ -14,3 +14,9 @@ template "#{node['apache']['conf_available_dir']}/staging.conf" do
     :path => node['apache']['dir']
   })
 end
+
+link "#{node['apache']['conf_enabled_dir']}/staging.conf" do
+  to "#{node['apache']['conf_available_dir']}/staging.conf"
+  owner 'root'
+  group 'root'
+end
