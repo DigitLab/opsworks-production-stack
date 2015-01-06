@@ -1,0 +1,5 @@
+# Exclude all robots
+<Location "/robots.txt">
+    SetHandler None
+</Location>
+Alias /robots.txt <%= @path %>/robots.txt
