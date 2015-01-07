@@ -3,9 +3,13 @@
 # Recipe:: php-undeploy
 
 include_recipe 'deploy'
-include_recipe 'undeploy'
 
 node[:deploy].each do |application, deploy|
+  opsworks_undeploy do
+    deploy_data deploy
+    app application
+  end
+
   if deploy[:application_type] != 'php'
     Chef::Log.debug("Skipping deploy::php-undeploy application #{application} as it is not an PHP app")
     next
