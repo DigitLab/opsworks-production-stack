@@ -14,4 +14,5 @@ normal[:mod_php5_apache2][:packages] = [ 'php5-common',
                                          'php5-mcrypt',
                                          'php5-memcache',
                                          'php5-imap',
-                                         'php5-mysql' ]
+                                         'php5-mysql',
+                                         'php5-mongo']
